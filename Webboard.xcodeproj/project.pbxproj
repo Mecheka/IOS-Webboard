@@ -13,6 +13,15 @@
 		1BF44B712349C20B005F68BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF44B6F2349C20B005F68BE /* Main.storyboard */; };
 		1BF44B732349C20D005F68BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF44B722349C20D005F68BE /* Assets.xcassets */; };
 		1BF44B762349C20D005F68BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF44B742349C20D005F68BE /* LaunchScreen.storyboard */; };
+		1BF44B7E2349C318005F68BE /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF44B7D2349C318005F68BE /* LandingViewController.swift */; };
+		51675EF42349D6100070AC90 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51675EF32349D6100070AC90 /* Authorization.storyboard */; };
+		51675EF62349D70E0070AC90 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51675EF52349D70D0070AC90 /* RegisterViewController.swift */; };
+		51675EF82349D7190070AC90 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51675EF72349D7190070AC90 /* LoginViewController.swift */; };
+		517D7F352349EA29005E06E4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D7F342349EA29005E06E4 /* String+Extension.swift */; };
+		517D7F382349ED33005E06E4 /* InputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D7F362349ED33005E06E4 /* InputTableViewCell.swift */; };
+		517D7F392349ED33005E06E4 /* InputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 517D7F372349ED33005E06E4 /* InputTableViewCell.xib */; };
+		51E187E2234A2E76000970D6 /* TableView+Extenttion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E187E1234A2E76000970D6 /* TableView+Extenttion.swift */; };
+		51E81F0A2349CF37004C438F /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E81F092349CF37004C438F /* AuthorizationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		1BF44B722349C20D005F68BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BF44B752349C20D005F68BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BF44B772349C20D005F68BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BF44B7D2349C318005F68BE /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		51675EF32349D6100070AC90 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		51675EF52349D70D0070AC90 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		51675EF72349D7190070AC90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		517D7F342349EA29005E06E4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		517D7F362349ED33005E06E4 /* InputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTableViewCell.swift; sourceTree = "<group>"; };
+		517D7F372349ED33005E06E4 /* InputTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTableViewCell.xib; sourceTree = "<group>"; };
+		51E187E1234A2E76000970D6 /* TableView+Extenttion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extenttion.swift"; sourceTree = "<group>"; };
+		51E81F092349CF37004C438F /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,80 @@
 		1BF44B682349C20B005F68BE /* Webboard */ = {
 			isa = PBXGroup;
 			children = (
+				517D7F332349EA01005E06E4 /* Extension */,
+				51E81F0B2349D419004C438F /* Storyboard */,
+				51E81F082349CE89004C438F /* Manager */,
+				1BF44B812349C32C005F68BE /* TableViewCell */,
+				1BF44B802349C326005F68BE /* Models */,
+				1BF44B7F2349C31E005F68BE /* Controllers */,
 				1BF44B692349C20B005F68BE /* AppDelegate.swift */,
 				1BF44B6B2349C20B005F68BE /* SceneDelegate.swift */,
 				1BF44B6D2349C20B005F68BE /* ViewController.swift */,
-				1BF44B6F2349C20B005F68BE /* Main.storyboard */,
 				1BF44B722349C20D005F68BE /* Assets.xcassets */,
-				1BF44B742349C20D005F68BE /* LaunchScreen.storyboard */,
 				1BF44B772349C20D005F68BE /* Info.plist */,
 			);
 			path = Webboard;
+			sourceTree = "<group>";
+		};
+		1BF44B7F2349C31E005F68BE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1BF44B7D2349C318005F68BE /* LandingViewController.swift */,
+				51675EF92349D73F0070AC90 /* Authorization */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BF44B802349C326005F68BE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1BF44B812349C32C005F68BE /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				517D7F362349ED33005E06E4 /* InputTableViewCell.swift */,
+				517D7F372349ED33005E06E4 /* InputTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		51675EF92349D73F0070AC90 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				51675EF52349D70D0070AC90 /* RegisterViewController.swift */,
+				51675EF72349D7190070AC90 /* LoginViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		517D7F332349EA01005E06E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				517D7F342349EA29005E06E4 /* String+Extension.swift */,
+				51E187E1234A2E76000970D6 /* TableView+Extenttion.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		51E81F082349CE89004C438F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				51E81F092349CF37004C438F /* AuthorizationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		51E81F0B2349D419004C438F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1BF44B6F2349C20B005F68BE /* Main.storyboard */,
+				1BF44B742349C20D005F68BE /* LaunchScreen.storyboard */,
+				51675EF32349D6100070AC90 /* Authorization.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +208,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517D7F392349ED33005E06E4 /* InputTableViewCell.xib in Resources */,
+				51675EF42349D6100070AC90 /* Authorization.storyboard in Resources */,
 				1BF44B762349C20D005F68BE /* LaunchScreen.storyboard in Resources */,
 				1BF44B732349C20D005F68BE /* Assets.xcassets in Resources */,
 				1BF44B712349C20B005F68BE /* Main.storyboard in Resources */,
@@ -138,8 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517D7F352349EA29005E06E4 /* String+Extension.swift in Sources */,
+				51675EF82349D7190070AC90 /* LoginViewController.swift in Sources */,
 				1BF44B6E2349C20B005F68BE /* ViewController.swift in Sources */,
+				51E187E2234A2E76000970D6 /* TableView+Extenttion.swift in Sources */,
 				1BF44B6A2349C20B005F68BE /* AppDelegate.swift in Sources */,
+				51E81F0A2349CF37004C438F /* AuthorizationManager.swift in Sources */,
+				51675EF62349D70E0070AC90 /* RegisterViewController.swift in Sources */,
+				1BF44B7E2349C318005F68BE /* LandingViewController.swift in Sources */,
+				517D7F382349ED33005E06E4 /* InputTableViewCell.swift in Sources */,
 				1BF44B6C2349C20B005F68BE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,28 +33,12 @@
                     </view>
                     <connections>
                         <segue destination="Efp-0W-dyt" kind="show" identifier="Home" id="bnp-zd-3R9"/>
-                        <segue destination="aae-fx-gh2" kind="show" identifier="Authorization" id="ObD-1M-fJg"/>
+                        <segue destination="AD4-UA-eVy" kind="show" identifier="Authorization" id="Y1p-tz-fpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbf-ah-kwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="265" y="38"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Gc2-j6-YQb">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="aae-fx-gh2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dm3-UL-8Wg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="fz6-iy-9Re"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VkW-1z-uGf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hzx-xM-0vP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="694" y="876"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="P6j-t4-0dB">
@@ -71,6 +55,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZo-lC-SqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-139" y="876"/>
+        </scene>
+        <!--Authorization-->
+        <scene sceneID="6hv-dI-4bS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Authorization" id="AD4-UA-eVy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4kV-IB-iZC"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6c3-N0-d46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="558"/>
         </scene>
     </scenes>
 </document>

@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol InputTableViewCellDelegate: class {
+    func InputTableViewCell(_ InputTableViewCell: InputTableViewCell, didInputText text: String?)
+    func InputTableViewCell(_ InputTableViewCell: InputTableViewCell, nextTextFieldAt tag: Int)
+}
+
 class InputTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var textField: UITextField!
+    weak var delegate: InputTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +29,55 @@ class InputTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        clear()
+    }
+    
+    func setup(text: String?, placeholder: String, keyboardType: UIKeyboardType = .default,
+               isSecureTextEntry: Bool = false, indexPath:Int, numberOfRow: Int) {
+        if numberOfRow - 1 == indexPath{
+            textField.returnKeyType = .done
+        }else{
+            textField.returnKeyType = .next
+        }
+
+        textField.text = text
+        textField.placeholder = placeholder
+        textField.keyboardType = keyboardType
+        textField.isSecureTextEntry = isSecureTextEntry
+
+        textField.tag = 0
+        delegate = nil
+    }
+    
+    private func clear(){
+        
+        textField.text = nil
+        textField.placeholder = "Input Text Here"
+        textField.keyboardType = .default
+        textField.isSecureTextEntry = false
+    }
+}
+
+extension InputTableViewCell: UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        delegate?.InputTableViewCell(self, nextTextFieldAt: textField.tag)
+        return textField.resignFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        delegate?.InputTableViewCell(self, didInputText: newString)
+        return true
+    }
 }

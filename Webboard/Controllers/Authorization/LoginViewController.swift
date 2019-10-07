@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        email.tag = 1
+        password.tag = 2
     }
     
     // MARK: - Action
@@ -93,4 +95,18 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginViewController: UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        if let nextField = textField.superview?.superview?.viewWithTag(nextTag){
+            nextField.becomeFirstResponder()
+        }else{
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
 }

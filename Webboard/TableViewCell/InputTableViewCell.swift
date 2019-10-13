@@ -9,8 +9,10 @@
 import UIKit
 
 protocol InputTableViewCellDelegate: class {
-    func InputTableViewCell(_ InputTableViewCell: InputTableViewCell, didInputText text: String?)
-    func InputTableViewCell(_ InputTableViewCell: InputTableViewCell, nextTextFieldAt tag: Int)
+    func inputTableViewCell(_ inputTableViewCell: InputTableViewCell, didInputText text: String?)
+    func inputTableViewCell(_ inputTableViewCell: InputTableViewCell, nextTextFieldAt tag: Int)
+    func inputTableViewCell(_ inputTableViewCell: InputTableViewCell, didBeginEditingTextField textFiele: UITextField)
+    func inputTableViewCell(_ inputTableViewCell: InputTableViewCell, didEndEditingTextField textFiele: UITextField)
 }
 
 class InputTableViewCell: UITableViewCell {
@@ -47,7 +49,7 @@ class InputTableViewCell: UITableViewCell {
         textField.keyboardType = keyboardType
         textField.isSecureTextEntry = isSecureTextEntry
 
-        textField.tag = 0
+        tag = 0
         delegate = nil
     }
     
@@ -63,21 +65,21 @@ class InputTableViewCell: UITableViewCell {
 extension InputTableViewCell: UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
+        delegate?.inputTableViewCell(self, didBeginEditingTextField: textField)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
+        delegate?.inputTableViewCell(self, didEndEditingTextField: textField)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        delegate?.InputTableViewCell(self, nextTextFieldAt: textField.tag)
+        delegate?.inputTableViewCell(self, nextTextFieldAt: textField.tag)
         return textField.resignFirstResponder()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-        delegate?.InputTableViewCell(self, didInputText: newString)
+        delegate?.inputTableViewCell(self, didInputText: newString)
         return true
     }
 }

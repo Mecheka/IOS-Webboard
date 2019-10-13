@@ -85,19 +85,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xrf-J0-JnL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xrf-J0-JnL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qsU-Fj-QPB" id="IzQ-0Q-c9x"/>
                                     <outlet property="delegate" destination="qsU-Fj-QPB" id="foZ-eg-OIE"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKQ-P3-rFe" userLabel="Button Container">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zC-M5-69U">
+                                        <rect key="frame" x="50" y="18" width="314" height="44"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="szD-8T-naH"/>
+                                        </constraints>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonTapped:" destination="qsU-Fj-QPB" eventType="touchUpInside" id="ydP-fs-ILn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7Bq-oO-2gP"/>
+                                    <constraint firstItem="2zC-M5-69U" firstAttribute="centerY" secondItem="hKQ-P3-rFe" secondAttribute="centerY" id="T6C-C8-wJb"/>
+                                    <constraint firstAttribute="trailing" secondItem="2zC-M5-69U" secondAttribute="trailing" constant="50" id="TmO-e8-7dL"/>
+                                    <constraint firstItem="2zC-M5-69U" firstAttribute="leading" secondItem="hKQ-P3-rFe" secondAttribute="leading" constant="50" id="q60-j3-HSe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jbK-kv-rjy" firstAttribute="bottom" secondItem="xrf-J0-JnL" secondAttribute="bottom" id="TZJ-Mg-FKv"/>
+                            <constraint firstItem="hKQ-P3-rFe" firstAttribute="leading" secondItem="jbK-kv-rjy" secondAttribute="leading" id="1XU-Lu-w9r"/>
+                            <constraint firstItem="jbK-kv-rjy" firstAttribute="bottom" secondItem="hKQ-P3-rFe" secondAttribute="bottom" id="4Sk-P7-d3V"/>
+                            <constraint firstItem="hKQ-P3-rFe" firstAttribute="top" secondItem="xrf-J0-JnL" secondAttribute="bottom" id="UcU-jd-9l4"/>
                             <constraint firstItem="xrf-J0-JnL" firstAttribute="leading" secondItem="jbK-kv-rjy" secondAttribute="leading" id="Wcd-0z-qCR"/>
+                            <constraint firstItem="jbK-kv-rjy" firstAttribute="trailing" secondItem="hKQ-P3-rFe" secondAttribute="trailing" id="ZYA-FE-E2f"/>
                             <constraint firstItem="jbK-kv-rjy" firstAttribute="trailing" secondItem="xrf-J0-JnL" secondAttribute="trailing" id="m08-QF-BDb"/>
                             <constraint firstItem="xrf-J0-JnL" firstAttribute="top" secondItem="jbK-kv-rjy" secondAttribute="top" id="w2P-ut-pQd"/>
                         </constraints>
@@ -105,12 +133,65 @@
                     </view>
                     <navigationItem key="navigationItem" title="Regiater" id="XId-Rv-Iy1"/>
                     <connections>
+                        <outlet property="buttonHeight" destination="7Bq-oO-2gP" id="lbE-86-ib6"/>
+                        <outlet property="registerButton" destination="2zC-M5-69U" id="Zry-QO-3a8"/>
                         <outlet property="tableView" destination="xrf-J0-JnL" id="aSV-sy-myi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBY-Bh-0rp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2268.1159420289855" y="145.98214285714286"/>
+        </scene>
+        <!--Simple Date Picker View Controller-->
+        <scene sceneID="W8i-9z-q8y">
+            <objects>
+                <viewController id="gAD-CZ-Ult" customClass="SimpleDatePickerViewController" customModule="Webboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vTk-jA-6C4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Input" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSM-qn-tkn">
+                                <rect key="frame" x="57" y="431" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="nB5-bX-eqE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gAD-CZ-Ult" id="pox-id-fEV"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bSM-qn-tkn" firstAttribute="centerX" secondItem="vTk-jA-6C4" secondAttribute="centerX" id="nOE-B9-Rc2"/>
+                            <constraint firstItem="bSM-qn-tkn" firstAttribute="centerY" secondItem="vTk-jA-6C4" secondAttribute="centerY" id="xup-uz-ZCt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q9I-NF-fj8"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="tgf-WH-w8v" id="fom-dT-YB9"/>
+                        <outlet property="inputTextField" destination="bSM-qn-tkn" id="nQQ-Fn-k02"/>
+                        <outlet property="toolbar" destination="msA-qp-YMG" id="7iL-eD-7v9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgq-ys-f8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="msA-qp-YMG">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="ยกเลิก" style="done" id="JUh-pw-eL1"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hn6-A6-rCQ"/>
+                        <barButtonItem title="เสร็จ" style="done" id="YLs-FI-cKO"/>
+                    </items>
+                </toolbar>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" id="tgf-WH-w8v">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <locale key="locale" localeIdentifier="th"/>
+                </datePicker>
+            </objects>
+            <point key="canvasLocation" x="2267" y="1041"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8jp-Yg-Fsg">

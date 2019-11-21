@@ -1,0 +1,6 @@
+framework module Pods_Webboard {
+  umbrella header "Pods-Webboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

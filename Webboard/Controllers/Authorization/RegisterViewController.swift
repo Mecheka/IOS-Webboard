@@ -198,9 +198,6 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Action
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        guard validateAll() else {
-            return
-        }
         
         register()
     }
@@ -292,10 +289,52 @@ class RegisterViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
-    
+        
     // MARK: - Service
     private func register(){
-        showError(message: "Success !!")
+        // 1.
+        let params = ["name": "\(firstname!) \(lastname!)",
+            "email": "\(email!)",
+            "password": "\(password!)"
+        ]
+        
+        // 2.
+        guard let url = URL(string: "http://localhost:8080/api/v1.0/users") else { return }
+        
+        var request = URLRequest(url: url)
+        
+        // 3.
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: params, options: [])
+            request.httpMethod = "POST"
+            request.httpBody = jsonData
+            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        // 4. // Callback
+        let task =  URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            do {
+                
+                let json: NSDictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! NSDictionary
+                print(json)
+                
+            }
+            catch let err as NSError{
+                print(err.localizedDescription);
+            }
+        })
+        
+        // 5. run
+        task.resume()
+        
     }
     
     /*

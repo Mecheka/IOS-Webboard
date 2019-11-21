@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    var service = Service()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,7 +84,16 @@ class LoginViewController: UIViewController {
     
     // MARK: - Service
     private func login(){
-        showError(message: "Success !!")
+        service.login(username: email.text!, password: password.text!) { [weak self] result in
+            switch result {
+            case .success(let loginRespone):
+                AuthorizationManager.shared.token = loginRespone.string
+                let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+                window?.rootViewController?.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                self?.showError(message: error.localizedDescription)
+            }
+        }
     }
     
     /*

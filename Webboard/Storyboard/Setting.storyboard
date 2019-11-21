@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kUZ-Wz-ac9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SETTING-->
+        <scene sceneID="FSE-nC-GUM">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kUZ-Wz-ac9" customClass="SettingViewController" customModule="Webboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A0c-9S-gbv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7i-h5-0kK">
+                                <rect key="frame" x="170.5" y="427.5" width="73" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="kUZ-Wz-ac9" eventType="touchUpInside" id="YSs-qb-4Hh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="k7i-h5-0kK" firstAttribute="centerX" secondItem="A0c-9S-gbv" secondAttribute="centerX" id="ydf-Fm-8N4"/>
+                            <constraint firstItem="k7i-h5-0kK" firstAttribute="centerY" secondItem="A0c-9S-gbv" secondAttribute="centerY" id="zcR-Ot-J49"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n66-qc-am6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SETTING" id="C45-8S-ron"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4E-ZN-fCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="90"/>
+        </scene>
+    </scenes>
+</document>
